@@ -11,3 +11,19 @@ Requires qemu
 ```bash
 sudo apt install qemu
 ```
+
+## Compile/Run
+
+The run script will check if `qemu-system-x86_64` is installed and that the code has been compiled.
+
+The run script will compile the code if it has not been already.
+
+```bash
+scripts/run.sh
+```
+
+From root folder execute `compile.sh` from the `scripts` directory to only compile.
+
+```bash
+scripts/compile.sh
+```

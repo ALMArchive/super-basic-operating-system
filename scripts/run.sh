@@ -10,4 +10,4 @@ then
   scripts/compile.sh
 fi
 
-qemu-system-x86_64 dist
+qemu-system-x86_64 dist/boot_sect.bin

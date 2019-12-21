@@ -2,18 +2,25 @@
   ; A simple boot sector that prints a message to the screen using a BIOS routine.
   ;
   mov ah, 0x0e
-  mov al, 'H'
+
+  mov al, the_secret
   int 0x10
-  mov al, 'e'
+
+  mov al, [the_secret]
   int 0x10
-  mov al, 'l'
+
+  mov bx, the_secret
+  add bx, 0x7c00
+  mov al, [bx]
   int 0x10
-  mov al, 'l'
-  int 0x10
-  mov al, 'o'
+
+  mov al, [0x7c1e]
   int 0x10
 
   jmp $
+
+the_secret:
+  db "X"
 
   times 510-($-$$) db 0
 

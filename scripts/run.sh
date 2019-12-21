@@ -5,9 +5,10 @@ then
   exit 1
 fi
 
-if [ ! -f dist/boot_sect.bin ]
+if [ -f dist/boot_sect.bin ]
 then
-  scripts/compile.sh
+  rm dist/boot_sect.bin
 fi
 
+ scripts/compile.sh
 qemu-system-x86_64 dist/boot_sect.bin
